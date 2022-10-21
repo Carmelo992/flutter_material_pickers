@@ -40,6 +40,8 @@ class SelectionPickerState<T> extends State<SelectionPicker<T>> {
   SelectionPickerState(this.selectedValue);
 
   T selectedValue;
+  
+  ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,9 @@ class SelectionPickerState<T> extends State<SelectionPicker<T>> {
 
     return Container(
       child: Scrollbar(
+        controller: _scrollController,
         child: ListView.builder(
+          controller: _scrollController,
           itemCount: itemCount,
           itemBuilder: (BuildContext context, int index) {
             T item = widget.items[index];
