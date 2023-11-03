@@ -35,6 +35,7 @@ class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
 
   List<T> selectedValues;
 
+  ScrollController _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -43,7 +44,9 @@ class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
 
     return Container(
       child: Scrollbar(
+        controller: _scrollController,
         child: ListView.builder(
+          controller: _scrollController,
           itemCount: itemCount,
           itemBuilder: (BuildContext context, int index) {
             final item = widget.items[index];

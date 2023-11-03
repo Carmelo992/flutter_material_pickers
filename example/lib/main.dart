@@ -45,7 +45,7 @@ class _TestPageState extends State<TestPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           title: const Text('Material Picker Examples'),
           actions: <Widget>[
@@ -149,9 +149,7 @@ class _TestPageState extends State<TestPage> {
                         TextSpan(
                             text:
                                 'This example has the button bar hidden, so you dismiss it by clicking outside the window.',
-                            style: TextStyle(
-                                fontStyle: FontStyle.italic,
-                                fontWeight: FontWeight.w300)),
+                            style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.w300)),
                         //TextSpan(text: 'your text',style: TextStyle(color: Colors.redAccent,fontSize: 38))
                       ],
                     ),
@@ -184,8 +182,7 @@ class _TestPageState extends State<TestPage> {
               showDivider: false,
               items: ExampleModel.usStates,
               selectedItem: model.selectedUsState,
-              onChanged: (value) =>
-                  setState(() => model.selectedUsState = value),
+              onChanged: (value) => setState(() => model.selectedUsState = value),
               onCancelled: () => print('Scroll Picker cancelled'),
               onConfirmed: () => print('Scroll Picker confirmed'),
             ),
@@ -243,8 +240,7 @@ class _TestPageState extends State<TestPage> {
               title: 'Pick Your Toppings',
               items: ExampleModel.iceCreamToppings,
               selectedItems: model.selectedIceCreamToppings,
-              onChanged: (value) =>
-                  setState(() => model.selectedIceCreamToppings = value),
+              onChanged: (value) => setState(() => model.selectedIceCreamToppings = value),
             ),
           ),
         ),
@@ -270,8 +266,7 @@ class _TestPageState extends State<TestPage> {
               title: 'Pick Your City',
               items: ExampleModel.usStates,
               selectedItem: model.selectedUsState,
-              onChanged: (value) =>
-                  setState(() => model.selectedUsState = value),
+              onChanged: (value) => setState(() => model.selectedUsState = value),
             ),
           ),
         ),

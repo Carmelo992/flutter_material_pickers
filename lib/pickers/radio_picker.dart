@@ -39,6 +39,8 @@ class RadioPickerState<T> extends State<RadioPicker<T>> {
 
   T? selectedValue;
 
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     int itemCount = widget.items.length;
@@ -46,7 +48,9 @@ class RadioPickerState<T> extends State<RadioPicker<T>> {
 
     return Container(
       child: Scrollbar(
+        controller: _scrollController,
         child: ListView.builder(
+          controller: _scrollController,
           itemCount: itemCount,
           itemBuilder: (BuildContext context, int index) {
             final item = widget.items[index];
